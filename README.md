@@ -95,11 +95,11 @@ Add item `id` with `label`.
 
 ### ScrollableList.header(lable: String)
 
-Set or get header, set header if `label` provided, or return header item. `label` with null will unset it.
+Set or get header, set header if `label` provided, or return header item. `label` with '' will unset it.
 
 ### ScrollableList.footer(lable: String)
 
-Set or get footer, set footer if `label` provided, or return footer item. `label` with null will unset it.
+Set or get footer, set footer if `label` provided, or return footer item. `label` with '' will unset it.
 
 ### ScrollableList.remove(id: String)
 

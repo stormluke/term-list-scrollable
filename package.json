@@ -1,6 +1,6 @@
 {
   "name": "term-list-scrollable",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "scrollable interactive terminal lists",
   "main": "index.js",
   "scripts": {

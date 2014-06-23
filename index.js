@@ -72,7 +72,7 @@ ScrollableList.prototype.add = function(id, label) {
  * @param {String} label
  *
  * set header if `label` provided, or return header item.
- * `label` with null will unset it.
+ * `label` with '' will unset it.
  *
  * @return {Object} this or item
  * @api public
@@ -81,6 +81,9 @@ ScrollableList.prototype.add = function(id, label) {
 ScrollableList.prototype.header = function(label) {
   if (label) {
     this._header = {id: '_header', label: label};
+    return this;
+  } else if (label === '') {
+    this._header = null;
     return this;
   } else {
     return this._header;
@@ -93,7 +96,7 @@ ScrollableList.prototype.header = function(label) {
  * @param {String} label
  *
  * set footer if `label` provided, or return footer item.
- * `label` with null will unset it.
+ * `label` with '' will unset it.
  *
  * @return {Object} this or item
  * @api public
@@ -102,6 +105,9 @@ ScrollableList.prototype.header = function(label) {
 ScrollableList.prototype.footer = function(label) {
   if (label) {
     this._footer = {id: '_footer', label: label};
+    return this;
+  } else if (label === '') {
+    this._footer = null;
     return this;
   } else {
     return this._footer;
