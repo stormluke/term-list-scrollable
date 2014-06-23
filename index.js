@@ -19,8 +19,8 @@ var List = require('term-list');
 
 function ScrollableList(opts) {
   opts = opts || {};
-  this._header = null;
-  this._footer = null;
+  this._header = {id: '_header', label: ''};
+  this._footer = {id: '_footer', label: ''};
   this.items = [];
   this.top = 0;
   this.shift = 0;
@@ -74,19 +74,19 @@ ScrollableList.prototype.add = function(id, label) {
  * set header if `label` provided, or return header item.
  * `label` with '' will unset it.
  *
- * @return {Object} this or item
+ * @return {Object} this or header
  * @api public
  */
 
 ScrollableList.prototype.header = function(label) {
   if (label) {
-    this._header = {id: '_header', label: label};
+    this._header.label = label;
     return this;
   } else if (label === '') {
-    this._header = null;
+    this._header.label = null;
     return this;
   } else {
-    return this._header;
+    return this._header.label;
   }
 };
 
@@ -98,19 +98,19 @@ ScrollableList.prototype.header = function(label) {
  * set footer if `label` provided, or return footer item.
  * `label` with '' will unset it.
  *
- * @return {Object} this or item
+ * @return {Object} this or footer
  * @api public
  */
 
 ScrollableList.prototype.footer = function(label) {
   if (label) {
-    this._footer = {id: '_footer', label: label};
+    this._footer.label = label;
     return this;
   } else if (label === '') {
-    this._footer = null;
+    this._footer.label = null;
     return this;
   } else {
-    return this._footer;
+    return this._footer.label;
   }
 };
 
@@ -245,8 +245,8 @@ ScrollableList.prototype.draw = function() {
   if (end > this.items.length) end = this.items.length;
   this.viewport.items = this.items.slice(this.top, end);
   var item = this.viewport.items[this.shift];
-  if (this._header) this.viewport.items.unshift(this._header);
-  if (this._footer) this.viewport.items.push(this._footer);
+  if (this._header.label) this.viewport.items.unshift(this._header);
+  if (this._footer.label) this.viewport.items.push(this._footer);
   if (item) this.viewport.select(item.id);
   return this;
 };
