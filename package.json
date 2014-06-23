@@ -1,0 +1,31 @@
+{
+  "name": "term-list-scrollable",
+  "version": "0.1.0",
+  "description": "scrollable interactive terminal lists",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "stormluke",
+  "license": "MIT",
+  "dependencies": {
+    "keypress": "^0.2.1",
+    "term-list": "^0.2.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stormluke/term-list-scrollable"
+  },
+  "keywords": [
+    "term",
+    "terminal",
+    "list",
+    "interactive",
+    "scrollable"
+  ],
+  "bugs": {
+    "url": "https://github.com/stormluke/term-list-scrollable/issues"
+  },
+  "homepage": "https://github.com/stormluke/term-list-scrollable"
+}
