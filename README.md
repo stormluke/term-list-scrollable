@@ -1,4 +1,4 @@
-term-list-scrollable [![NPM version](https://badge.fury.io/js/term-list-scrollable@2x.png)](http://badge.fury.io/js/term-list-scrollable)
+term-list-scrollable [![NPM version](https://badge.fury.io/js/term-list-scrollable.svg)](http://badge.fury.io/js/term-list-scrollable)
 ====================
 
 Renders an interactive list to the terminal that users can navigate using the arrow keys, similar API with [term-list](https://github.com/visionmedia/node-term-list) but scrollable, and support header or footer.
@@ -66,16 +66,20 @@ list.on('empty', function(){
 
 ### API
 
-- [ScrollableList()](#list)
-- [ScrollableList.add()](#listaddidstringlabelstring)
-- [ScrollableList.remove()](#listremoveidstring)
-- [ScrollableList.at()](#listatinumber)
-- [ScrollableList.select()](#listselectidstring)
-- [ScrollableList.draw()](#listdraw)
-- [ScrollableList.up()](#listup)
-- [ScrollableList.down()](#listdown)
-- [ScrollableList.stop()](#liststop)
-- [ScrollableList.start()](#liststart)
+- [ScrollableList()](#scrollablelist)
+- [ScrollableList.add()](#scrollablelistaddidstring-lablestring)
+- [ScrollableList.header()](#scrollablelistheaderlable-string)
+- [ScrollableList.footer()](#scrollablelistfooterlable-string)
+- [ScrollableList.remove()](#scrollablelistremove)
+- [ScrollableList.at()](#scrollablelistati-number)
+- [ScrollableList.select()](#scrollablelistselectid-string)
+- [ScrollableList.selected()](#scrollablelistselected)
+- [ScrollableList.draw()](#scrollablelistdraw)
+- [ScrollableList.up()](#scrollablelistup)
+- [ScrollableList.down()](#scrollablelistdown)
+- [ScrollableList.stop()](#scrollableliststop)
+- [ScrollableList.start()](#scrollableliststart)
+- [ScrollableList.on()](#scrollablelistonevent-string-callback-function)
 
 ### ScrollableList()
 
@@ -85,7 +89,7 @@ Initialize a new `ScrollableList` with `opts`:
 - `markerLength` optional marker length, otherwise marker.length is used
 - `viewportSize` optional scrollable list size, defualt is 16
 
-### ScrollableList.add(id:String, label:String)
+### ScrollableList.add(id: String, label: String)
 
 Add item `id` with `label`.
 
@@ -97,15 +101,15 @@ Set or get header, set header if `label` provided, or return header item. `label
 
 Set or get footer, set footer if `label` provided, or return footer item. `label` with null will unset it.
 
-### ScrollableList.remove(id:String)
+### ScrollableList.remove(id: String)
 
 Remove item `id`.
 
-### ScrollableList.at(i:Number)
+### ScrollableList.at(i: Number)
 
 Return item at `i`.
 
-### ScrollableList.select(id:String)
+### ScrollableList.select(id: String)
 
 Select item `id`.
 
@@ -133,7 +137,7 @@ Select the next item if any.
 
 Start the list.
 
-### ScrollableList.on(event:String, callback:Function)
+### ScrollableList.on(event: String, callback: Function)
 
 Bind event listener
 
@@ -143,4 +147,4 @@ Bind event listener
 
 ## License
 
-  MIT
+MIT
